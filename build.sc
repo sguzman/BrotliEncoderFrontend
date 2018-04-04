@@ -5,7 +5,7 @@ import publish._
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
-object brotlifrontend extends ScalaModule {
+object brotlifrontend extends ScalaJSModule {
   /** Name of project */
   def name = "BrotliEncoderFrontend"
 
