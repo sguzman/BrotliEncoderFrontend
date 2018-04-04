@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package com.github.sguzman.brotli.frontend.protoc;
-
-message Upload {
-    string user = 1;
-    string repo = 2;
-}
-
