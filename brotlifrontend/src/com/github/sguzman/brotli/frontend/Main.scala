@@ -37,7 +37,7 @@ object Main {
       case _: onFileInput =>
         model.file.value = "file".id[Input].value
       case _: onCheckBox =>
-        println("checkbox".id[Input].value)
+        println("brotli".id[Input].value)
     }
   }
 
@@ -58,7 +58,7 @@ object Main {
       case "file" => t match {
         case "input" => onFileInput(e)
       }
-      case "checkbox" => t match {
+      case "brotli" => t match {
         case "input" => onCheckBox(e)
       }
     }
