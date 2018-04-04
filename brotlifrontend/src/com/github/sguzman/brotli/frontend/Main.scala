@@ -2,9 +2,9 @@ package com.github.sguzman.brotli.frontend
 
 import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{Binding, dom}
-import org.scalajs.dom.{Event, document}
-import org.scalajs.dom.html.{Button, Div, Input}
+import org.scalajs.dom.html.{Div, Input}
 import org.scalajs.dom.raw.Element
+import org.scalajs.dom.{Event, document}
 
 import scala.language.reflectiveCalls
 
@@ -24,7 +24,7 @@ object Main {
   final case class onRepoInput(e: Event) extends UpdateType(e)
   final case class onBranchInput(e: Event) extends UpdateType(e)
   final case class onFileInput(e: Event) extends UpdateType(e)
-  final case class onButtonClick(e: Event) extends UpdateType(e)
+  final case class onCheckBox(e: Event) extends UpdateType(e)
 
   def update(msg: UpdateType): Unit = {
     msg match {
@@ -36,7 +36,8 @@ object Main {
         model.branch.value = "branch".id[Input].value
       case _: onFileInput =>
         model.file.value = "file".id[Input].value
-      case _: onButtonClick => println("clicked me!")
+      case _: onCheckBox =>
+        println("checkbox".id[Input].value)
     }
   }
 
@@ -57,8 +58,8 @@ object Main {
       case "file" => t match {
         case "input" => onFileInput(e)
       }
-      case "button" => t match {
-        case "click" => onButtonClick(e)
+      case "checkbox" => t match {
+        case "input" => onCheckBox(e)
       }
     }
 
@@ -76,13 +77,9 @@ object Main {
         <input id="repo" oninput={emit[Input] _}></input>
         <input id="branch" oninput={emit[Input] _}></input>
         <input id="file" oninput={emit[Input] _}></input>
-        <input type="checkbox" id="brotli" oninput={emit[Input] _}></input>
-        <button id="button" onclick={emit[Button] _}></button>
+        <input type="checkbox" id="brotli" onchange={emit[Input] _}></input>
       </div>
-      <p>User: {model.user.bind}</p>
-      <p>Repo: {model.repo.bind}</p>
-      <p>Branch: {model.branch.bind}</p>
-      <p>File: {model.file.bind}</p>
+      <p>Path: https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
       <p></p>
       <div>
         Now you can use the generated path in your HTML
