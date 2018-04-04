@@ -59,7 +59,7 @@ object Main {
         case "input" => onFileInput(e)
       }
       case "brotli" => t match {
-        case "input" => onCheckBox(e)
+        case "change" => onCheckBox(e)
       }
     }
 
