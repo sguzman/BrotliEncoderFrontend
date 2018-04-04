@@ -37,7 +37,7 @@ object Main {
       case _: onFileInput =>
         model.file.value = "file".id[Input].value
       case _: onCheckBox =>
-        println("brotli".id[Input].value)
+        model.brotli.value = !model.brotli.value
     }
   }
 
