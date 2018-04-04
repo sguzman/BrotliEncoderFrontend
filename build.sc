@@ -1,11 +1,15 @@
 import mill._
 import mill.scalalib._
+import mill.scalajslib._
 import coursier.maven.MavenRepository
 import publish._
 import ammonite.ops._
 import ammonite.ops.ImplicitWd._
 
 object brotlifrontend extends ScalaJSModule {
+  /** ScalaJS version */
+  def scalaJSVersion = "0.6.22"
+
   /** Name of project */
   def name = "BrotliEncoderFrontend"
 
