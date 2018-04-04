@@ -6,3 +6,4 @@ out/
 lib/
 *.iml
 *.msg
+brotlifrontend/src/com/github/sguzman/brotli/frontend/protoc
