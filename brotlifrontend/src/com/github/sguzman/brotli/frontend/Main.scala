@@ -2,7 +2,7 @@ package com.github.sguzman.brotli.frontend
 
 import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{Binding, dom}
-import org.scalajs.dom.html.{Button, Div, Input}
+import org.scalajs.dom.html.{Div, Input}
 import org.scalajs.dom.raw.Element
 import org.scalajs.dom.{Event, document}
 
@@ -59,16 +59,18 @@ object Main {
   @dom def view(model: Model): Binding[Div] = {
     <div id="container">
       <header>
-        <h1>Include your Web Dependencies with Optional Brotli Encoding</h1>
+        <h1 id="header">Include your Web Dependencies with Optional Brotli Encoding</h1>
       </header>
       <div>
         <p>Add the user, repo, branch and file you plan on linking to</p>
         <p>If you plan on using Brotli encoding, don't forget to set the checkbox</p>
-        <input id="user" oninput={emit[Input] _}></input>
-        <input id="repo" oninput={emit[Input] _}></input>
-        <input id="branch" oninput={emit[Input] _}></input>
-        <input id="file" oninput={emit[Input] _}></input>
-        <input type="checkbox" id="brotli" onchange={emit[Input] _}></input>
+        <div id="inputs">
+          <input id="user" oninput={emit[Input] _}></input>
+          <input id="repo" oninput={emit[Input] _}></input>
+          <input id="branch" oninput={emit[Input] _}></input>
+          <input id="file" oninput={emit[Input] _}></input>
+          <input type="checkbox" id="brotli" onchange={emit[Input] _}></input>
+        </div>
       </div>
       <p>Path: https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
       <p>Make sure the path above is valid and copy it anywhere a GitHub resources needs to be pulled</p>
