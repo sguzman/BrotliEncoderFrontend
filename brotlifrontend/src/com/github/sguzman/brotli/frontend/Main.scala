@@ -81,7 +81,7 @@ object Main {
           </div>
         </div>
         <h3>Path:</h3>
-        <p>https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
+        <p><b>https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</b></p>
         <p>Make sure the path above is valid and copy it anywhere a GitHub resources needs to be pulled</p>
         <div>
           Now you can use the generated path in your HTML
