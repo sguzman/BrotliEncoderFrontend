@@ -67,7 +67,7 @@ object Main {
   }
 
   @dom def view(model: Model): Binding[Div] = {
-    <div>
+    <div class="container">
       <h1>Add Brotli Compression encoding</h1>
       <h2>How it works</h2>
       <div>
