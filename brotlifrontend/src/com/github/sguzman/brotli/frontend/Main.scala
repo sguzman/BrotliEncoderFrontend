@@ -2,7 +2,7 @@ package com.github.sguzman.brotli.frontend
 
 import com.thoughtworks.binding.Binding.Var
 import com.thoughtworks.binding.{Binding, dom}
-import org.scalajs.dom.html.{Div, Input}
+import org.scalajs.dom.html.{Button, Div, Input}
 import org.scalajs.dom.raw.Element
 import org.scalajs.dom.{Event, document}
 
@@ -45,22 +45,12 @@ object Main {
     val target = e.currentTarget.asInstanceOf[A].id
     val t = e.`type`
 
-    val msg = target match {
-      case "repo" => t match {
-        case "input" => onRepoInput(e)
-      }
-      case "user" => t match {
-        case "input" => onUserInput(e)
-      }
-      case "branch" => t match {
-        case "input" => onBranchInput(e)
-      }
-      case "file" => t match {
-        case "input" => onFileInput(e)
-      }
-      case "brotli" => t match {
-        case "change" => onCheckBox(e)
-      }
+    val msg = (target, t) match {
+      case ("repo", "input") => onRepoInput(e)
+      case ("user", "input") => onUserInput(e)
+      case ("branch", "input") => onBranchInput(e)
+      case ("file", "input") => onFileInput(e)
+      case ("brotli", "change") => onCheckBox(e)
     }
 
     update(msg)
