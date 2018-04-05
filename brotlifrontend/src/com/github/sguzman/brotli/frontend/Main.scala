@@ -68,8 +68,9 @@ object Main {
 
   @dom def view(model: Model): Binding[Div] = {
     <div id="container">
-      <h1>Add Brotli Compression encoding</h1>
-      <h2>How it works</h2>
+      <header>
+        <h1>Include your Web Dependencies with Optional Brotli Encoding</h1>
+      </header>
       <div>
         <p>Add the user, repo, branch and file you plan on linking to</p>
         <p>If you plan on using Brotli encoding, don't forget to set the checkbox</p>
@@ -80,7 +81,7 @@ object Main {
         <input type="checkbox" id="brotli" onchange={emit[Input] _}></input>
       </div>
       <p>Path: https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
-      <p></p>
+      <p>Make sure the path above is valid and copy it anywhere a GitHub resources needs to be pulled</p>
       <div>
         Now you can use the generated path in your HTML
       </div>
