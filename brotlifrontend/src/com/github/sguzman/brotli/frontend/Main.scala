@@ -51,6 +51,7 @@ object Main {
       case ("branch", "input") => onBranchInput(e)
       case ("file", "input") => onFileInput(e)
       case ("brotli", "change") => onCheckBox(e)
+      case _ => throw new Exception("Bad emit")
     }
 
     update(msg)
