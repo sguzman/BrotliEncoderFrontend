@@ -72,7 +72,7 @@ object Main {
       <h2>How it works</h2>
       <div>
         <p>Add the user, repo, branch and file you plan on linking to</p>
-        <p>If you plan on using Brotli encoding, don't forget to set the checkmark</p>
+        <p>If you plan on using Brotli encoding, don't forget to set the checkbox</p>
         <input id="user" oninput={emit[Input] _}></input>
         <input id="repo" oninput={emit[Input] _}></input>
         <input id="branch" oninput={emit[Input] _}></input>
