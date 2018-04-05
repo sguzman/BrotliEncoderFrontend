@@ -80,7 +80,8 @@ object Main {
             <input type="checkbox" id="brotli" onchange={emit[Input] _}></input>
           </div>
         </div>
-        <p>Path: https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
+        <h3>Path:</h3>
+        <p>https://brotli-encode.herokuapp.com/{model.user.bind}/{model.repo.bind}/{model.branch.bind}/{model.file.bind}{if (model.brotli.bind) "?brotli=true" else ""}</p>
         <p>Make sure the path above is valid and copy it anywhere a GitHub resources needs to be pulled</p>
         <div>
           Now you can use the generated path in your HTML
